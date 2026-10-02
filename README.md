@@ -35,4 +35,3 @@ Converts the rows of a matrix into columns and the columns into rows.
 Compile the program:
 gcc matrix_operation.c -o matrix_operation
 ./matrix_operation
-gcc matrix_operation.c -o matrix_operation
