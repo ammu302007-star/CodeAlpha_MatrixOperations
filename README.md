@@ -33,6 +33,6 @@ Converts the rows of a matrix into columns and the columns into rows.
 ## How to Run
 
 Compile the program:
-
-```bash
-gcc matrix_operations.c -o matrix_operations
+gcc matrix_operation.c -o matrix_operation
+./matrix_operation
+gcc matrix_operation.c -o matrix_operation
