@@ -25,6 +25,7 @@ void displayMatrix(int matrix[MAX][MAX], int rows, int cols)
         {
             printf("%d ", matrix[i][j]);
         }
+
         printf("\n");
     }
 }
@@ -45,7 +46,7 @@ void addMatrices(int matrix1[MAX][MAX], int matrix2[MAX][MAX],
 // Function for matrix multiplication
 void multiplyMatrices(int matrix1[MAX][MAX], int matrix2[MAX][MAX],
                       int result[MAX][MAX],
-                      int rows1, int cols1, int rows2, int cols2)
+                      int rows1, int cols1, int cols2)
 {
     for (int i = 0; i < rows1; i++)
     {
@@ -83,7 +84,7 @@ int main(void)
     printf("2. Matrix Multiplication\n");
     printf("3. Transpose\n");
 
-    printf("Enter your choice: ");
+    printf("\nEnter your choice: ");
     scanf("%d", &choice);
 
     // ================= MATRIX ADDITION =================
@@ -102,11 +103,11 @@ int main(void)
         printf("Enter rows and columns of second matrix: ");
         scanf("%d %d", &rows2, &cols2);
 
-        // Check whether addition is possible
+        // Check dimensions before entering elements
         if (rows1 != rows2 || cols1 != cols2)
         {
             printf("\nMatrix addition is not possible.\n");
-            printf("For addition, both matrices must have the same number of rows and columns.\n");
+            printf("Both matrices must have the same number of rows and columns.\n");
             return 0;
         }
 
@@ -144,7 +145,7 @@ int main(void)
         printf("Enter rows and columns of second matrix: ");
         scanf("%d %d", &rows2, &cols2);
 
-        // Check whether multiplication is possible
+        // Check dimensions before entering elements
         if (cols1 != rows2)
         {
             printf("\nMatrix multiplication is not possible.\n");
@@ -165,7 +166,7 @@ int main(void)
         displayMatrix(matrix2, rows2, cols2);
 
         multiplyMatrices(matrix1, matrix2, result,
-                         rows1, cols1, rows2, cols2);
+                         rows1, cols1, cols2);
 
         printf("\nResult of Multiplication:\n");
         displayMatrix(result, rows1, cols2);
@@ -198,6 +199,7 @@ int main(void)
     else
     {
         printf("\nInvalid choice.\n");
+        printf("Please select 1, 2, or 3.\n");
     }
 
     return 0;
